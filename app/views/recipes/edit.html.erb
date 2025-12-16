@@ -1,0 +1,61 @@
+<div class="form-container">
+  <h2>Edit Recipe</h2>
+
+  <%= form_with(model: @recipe, class: "recipe-form") do |form| %>
+    <% if @recipe.errors.any? %>
+      <div class="error-messages">
+        <h3><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h3>
+        <ul>
+          <% @recipe.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name, "Recipe Name *" %>
+      <%= form.text_field :name, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :category, "Category" %>
+      <%= form.select :category, 
+          ['Appetizer', 'Main Course', 'Dessert', 'Breakfast', 'Salad', 'Soup', 'Beverage', 'Other'],
+          { include_blank: 'Select a category' },
+          { class: "form-control" } %>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <%= form.label :prep_time, "Prep Time (minutes)" %>
+        <%= form.number_field :prep_time, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :cook_time, "Cook Time (minutes)" %>
+        <%= form.number_field :cook_time, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :servings, "Servings" %>
+        <%= form.number_field :servings, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :ingredients, "Ingredients *" %>
+      <%= form.text_area :ingredients, class: "form-control", rows: 8, required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :instructions, "Instructions *" %>
+      <%= form.text_area :instructions, class: "form-control", rows: 10, required: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit "Update Recipe", class: "btn btn-primary" %>
+      <%= link_to "Cancel", @recipe, class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>

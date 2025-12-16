@@ -1,0 +1,49 @@
+<div class="recipes-header">
+  <h2>My Recipe Collection</h2>
+  <p class="subtitle">Browse and manage your favorite recipes</p>
+</div>
+
+<div class="recipes-grid">
+  <% if @recipes.any? %>
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-card">
+        <div class="recipe-card-header">
+          <h3><%= recipe.name %></h3>
+          <% if recipe.category %>
+            <span class="category-badge"><%= recipe.category %></span>
+          <% end %>
+        </div>
+        
+        <div class="recipe-card-body">
+          <div class="recipe-meta">
+            <% if recipe.prep_time %>
+              <span>⏱️ Prep: <%= recipe.prep_time %> min</span>
+            <% end %>
+            <% if recipe.cook_time %>
+              <span>🔥 Cook: <%= recipe.cook_time %> min</span>
+            <% end %>
+            <% if recipe.servings %>
+              <span>🍽️ Serves: <%= recipe.servings %></span>
+            <% end %>
+          </div>
+          
+          <div class="recipe-preview">
+            <%= truncate(recipe.ingredients, length: 100) %>
+          </div>
+        </div>
+        
+        <div class="recipe-card-footer">
+          <%= link_to "View Recipe", recipe, class: "btn btn-sm" %>
+          <%= link_to "Edit", edit_recipe_path(recipe), class: "btn btn-sm btn-secondary" %>
+          <%= button_to "Delete", recipe, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-sm btn-danger" %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="empty-state">
+      <h3>No recipes yet!</h3>
+      <p>Start building your recipe collection by adding your first recipe.</p>
+      <%= link_to "Add Your First Recipe", new_recipe_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,1071 @@
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE DATABASE `cooking_recepies` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (90.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (52.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT GET_LOCK('7907712210610949940', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRecipes (20241204000001)
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE `recipes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `ingredients` text NOT NULL, `instructions` text NOT NULL, `prep_time` int, `cook_time` int, `servings` int, `category` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (160.8ms)[0m  [1m[35mCREATE INDEX `index_recipes_on_name` ON `recipes` (`name`)[0m
+  [1m[35m (23.4ms)[0m  [1m[35mCREATE INDEX `index_recipes_on_category` ON `recipes` (`category`)[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20241204000001')[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (15.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (6.9ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-12-16 10:54:02.804647', '2025-12-16 10:54:02.804647')[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('7907712210610949940')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-12-16 11:20:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1756)
+
+
+  
+NameError (uninitialized constant ApplicationRecord):
+  
+app/models/recipe.rb:1:in `<top (required)>'
+app/controllers/recipes_controller.rb:5:in `index'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-12-16 11:20:15 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2025-12-16 11:22:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1756)
+
+
+  
+NameError (uninitialized constant ApplicationRecord):
+  
+app/models/recipe.rb:1:in `<top (required)>'
+app/controllers/recipes_controller.rb:5:in `index'
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT GET_LOCK('7907712210610949940', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('7907712210610949940')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-12-16 11:25:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1756)
+
+
+  
+NameError (uninitialized constant ApplicationRecord):
+  
+app/models/recipe.rb:1:in `<top (required)>'
+app/controllers/recipes_controller.rb:5:in `index'
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 11:25:50 +0000
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+NameError (uninitialized constant ApplicationRecord):
+  
+app/models/recipe.rb:1:in `<top (required)>'
+app/controllers/recipes_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2025-12-16 11:31:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (9.1ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  Rendered recipes/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 2209)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 3084)
+Completed 200 OK in 44ms (Views: 14.4ms | ActiveRecord: 12.0ms | Allocations: 10220)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 11:31:48 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 632)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 1137)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.8ms | Allocations: 1412)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 11:31:50 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 629)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1076)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.9ms | Allocations: 1349)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2025-12-16 11:31:51 +0000
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 3412)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 3701)
+Completed 200 OK in 31ms (Views: 19.0ms | ActiveRecord: 3.2ms | Allocations: 9275)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 11:33:40 +0000
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Chocolate brownie", "category"=>"Dessert", "prep_time"=>"10", "cook_time"=>"20", "servings"=>"", "ingredients"=>"500g of chocolate\r\n2 table spoon of flour\r\n2 eggs\r\n1 cup of oil\r\n300g of sugar", "instructions"=>"mix all\r\nbake 20 minutes"}, "commit"=>"Save Recipe"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:21:in `create'
+  [1m[36mRecipe Create (7.7ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Chocolate brownie', '500g of chocolate\r\n2 table spoon of flour\r\n2 eggs\r\n1 cup of oil\r\n300g of sugar', 'mix all\r\nbake 20 minutes', 10, 20, NULL, 'Dessert', '2025-12-16 11:33:40.072714', '2025-12-16 11:33:40.072714')[0m
+  ↳ app/controllers/recipes_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/recipes/1
+Completed 302 Found in 33ms (ActiveRecord: 17.5ms | Allocations: 3893)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2025-12-16 11:33:40 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (3.6ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:43:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 1573)
+Completed 200 OK in 64ms (Views: 26.0ms | ActiveRecord: 3.6ms | Allocations: 4061)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 11:33:43 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1422)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 1866)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 2.3ms | Allocations: 2139)
+
+
+Started GET "/recipes/1/edit" for 127.0.0.1 at 2025-12-16 13:03:51 +0000
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (38.2ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:43:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 125.5ms | Allocations: 2234)
+  Rendered layout layouts/application.html.erb (Duration: 129.5ms | Allocations: 2524)
+Completed 200 OK in 403ms (Views: 137.2ms | ActiveRecord: 67.6ms | Allocations: 3479)
+
+
+Started PATCH "/recipes/1" for 127.0.0.1 at 2025-12-16 13:03:58 +0000
+Processing by RecipesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Chocolate brownie", "category"=>"Dessert", "prep_time"=>"10", "cook_time"=>"20", "servings"=>"4", "ingredients"=>"500g of chocolate\r\n2 table spoon of flour\r\n2 eggs\r\n1 cup of oil\r\n300g of sugar", "instructions"=>"mix all\r\nbake 20 minutes"}, "commit"=>"Update Recipe", "id"=>"1"}
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:43:in `set_recipe'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:29:in `update'
+  [1m[36mRecipe Update (33.7ms)[0m  [1m[33mUPDATE `recipes` SET `recipes`.`servings` = 4, `recipes`.`updated_at` = '2025-12-16 13:03:58.765177' WHERE `recipes`.`id` = 1[0m
+  ↳ app/controllers/recipes_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:29:in `update'
+Redirected to http://127.0.0.1:3000/recipes/1
+Completed 302 Found in 165ms (ActiveRecord: 50.9ms | Allocations: 3222)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2025-12-16 13:03:58 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (2.1ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:43:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 517)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 966)
+Completed 200 OK in 393ms (Views: 10.2ms | ActiveRecord: 2.1ms | Allocations: 1736)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 13:04:04 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (3.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 24.1ms | Allocations: 1388)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 1805)
+Completed 200 OK in 34ms (Views: 24.8ms | ActiveRecord: 6.5ms | Allocations: 2078)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2025-12-16 13:04:55 +0000
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (Duration: 21.8ms | Allocations: 1666)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 1956)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 2222)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:05:23 +0000
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Test", "category"=>"Appetizer", "prep_time"=>"30", "cook_time"=>"30", "servings"=>"3", "ingredients"=>"Testing POSTMAN", "instructions"=>"TESTING POSTMAN"}, "commit"=>"Save Recipe"}
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:21:in `create'
+  [1m[36mRecipe Create (16.6ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test', 'Testing POSTMAN', 'TESTING POSTMAN', 30, 30, 3, 'Appetizer', '2025-12-16 13:05:23.828844', '2025-12-16 13:05:23.828844')[0m
+  ↳ app/controllers/recipes_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/recipes/2
+Completed 302 Found in 61ms (ActiveRecord: 23.8ms | Allocations: 2443)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2025-12-16 13:05:23 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (18.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:43:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 475)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 958)
+Completed 200 OK in 53ms (Views: 7.8ms | ActiveRecord: 18.0ms | Allocations: 1738)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 13:05:35 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (2.6ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1581)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 2010)
+Completed 200 OK in 27ms (Views: 20.5ms | ActiveRecord: 4.5ms | Allocations: 2283)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:11:32 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Postman Test Pasta", "category"=>"Main Course", "prep_time"=>15, "cook_time"=>20, "servings"=>2, "ingredients"=>"Pasta\nTomato Sauce\nCheese", "instructions"=>"1. Boil water.\n2. Cook pasta.\n3. Eat."}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 22ms (ActiveRecord: 0.0ms | Allocations: 497)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.10) lib/action_controller/metal/request_forgery_protection.rb:253:in `handle_unverified_request'
+actionpack (7.0.10) lib/action_controller/metal/request_forgery_protection.rb:286:in `handle_unverified_request'
+actionpack (7.0.10) lib/action_controller/metal/request_forgery_protection.rb:275:in `verify_authenticity_token'
+activesupport (7.0.10) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.10) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.10) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.10) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.10) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.10) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.10) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.10) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.10) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.10) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.10) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.10) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.10) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.10) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.10) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.10) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.10) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.10) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.10) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.10) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.10) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.10) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.10) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.10) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.10) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.10) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.10) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.10) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.21) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.21) lib/rack/etag.rb:27:in `call'
+rack (2.2.21) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.21) lib/rack/head.rb:12:in `call'
+actionpack (7.0.10) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.10) lib/action_dispatch/http/content_security_policy.rb:39:in `call'
+rack (2.2.21) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.21) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.10) lib/active_record/migration.rb:639:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.10) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.10) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.10) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.10) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.10) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.10) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.10) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.10) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.21) lib/rack/method_override.rb:24:in `call'
+rack (2.2.21) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.10) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.10) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.10) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.21) lib/rack/sendfile.rb:127:in `call'
+actionpack (7.0.10) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (7.0.10) lib/rails/engine.rb:531:in `call'
+puma (5.6.9) lib/puma/configuration.rb:252:in `call'
+puma (5.6.9) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.9) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.9) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.9) lib/puma/server.rb:443:in `process_client'
+puma (5.6.9) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-12-16 13:12:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (3.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 52.4ms | Allocations: 8570)
+  Rendered layout layouts/application.html.erb (Duration: 58.5ms | Allocations: 9456)
+Completed 200 OK in 104ms (Views: 29.9ms | ActiveRecord: 40.8ms | Allocations: 16550)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:13:08 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Postman Test Pasta", "category"=>"Main Course", "prep_time"=>15, "cook_time"=>20, "servings"=>2, "ingredients"=>"Pasta\nTomato Sauce\nCheese", "instructions"=>"1. Boil water.\n2. Cook pasta.\n3. Eat."}}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (4.2ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Postman Test Pasta', 'Pasta\nTomato Sauce\nCheese', '1. Boil water.\n2. Cook pasta.\n3. Eat.', 15, 20, 2, 'Main Course', '2025-12-16 13:13:08.475180', '2025-12-16 13:13:08.475180')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/3
+Completed 302 Found in 24ms (ActiveRecord: 11.7ms | Allocations: 3733)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2025-12-16 13:13:08 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (8.5ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1090)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 1581)
+Completed 200 OK in 45ms (Views: 15.0ms | ActiveRecord: 8.5ms | Allocations: 4087)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 13:13:15 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1779)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 2206)
+Completed 200 OK in 19ms (Views: 10.9ms | ActiveRecord: 4.1ms | Allocations: 2466)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:23:56 +0000
+Processing by RecipesController#create as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 510)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: recipe):
+  
+app/controllers/recipes_controller.rb:48:in `recipe_params'
+app/controllers/recipes_controller.rb:20:in `create'
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:26:36 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 836", "category"=>"Main Course", "prep_time"=>667, "cook_time"=>491, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (11.6ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 836', 'Ingredient A\nIngredient B', 'Mix and cook.', 667, 491, 4, 'Main Course', '2025-12-16 13:26:37.039767', '2025-12-16 13:26:37.039767')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (12.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/4
+Completed 302 Found in 122ms (ActiveRecord: 32.8ms | Allocations: 2500)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2025-12-16 13:26:37 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 484)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 941)
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 1.8ms | Allocations: 1703)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 13:26:47 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1971)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 2415)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 4.1ms | Allocations: 2673)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2025-12-16 13:26:52 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 475)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 910)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 1.3ms | Allocations: 1664)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2025-12-16 13:26:55 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 475)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 898)
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 1.5ms | Allocations: 1652)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2025-12-16 13:26:59 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 475)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 920)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.3ms | Allocations: 1685)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 13:27:01 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1971)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2418)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 2.3ms | Allocations: 2676)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:26 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #965", "category"=>"Main Course", "prep_time"=>39, "cook_time"=>395, "servings"=>4, "ingredients"=>"Ingredient A: 562\nIngredient B: 64", "instructions"=>"Step 1: Mix 941\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (4.4ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #965', 'Ingredient A: 562\nIngredient B: 64', 'Step 1: Mix 941\nStep 2: Cook.', 39, 395, 4, 'Main Course', '2025-12-16 13:27:26.901435', '2025-12-16 13:27:26.901435')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/5
+Completed 302 Found in 27ms (ActiveRecord: 11.7ms | Allocations: 2378)
+
+
+Started GET "/recipes/5" for 127.0.0.1 at 2025-12-16 13:27:26 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 494)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 962)
+Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 1.6ms | Allocations: 1723)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:27 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 67", "category"=>"Main Course", "prep_time"=>679, "cook_time"=>716, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.8ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 67', 'Ingredient A\nIngredient B', 'Mix and cook.', 679, 716, 4, 'Main Course', '2025-12-16 13:27:27.303034', '2025-12-16 13:27:27.303034')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/6
+Completed 302 Found in 20ms (ActiveRecord: 6.5ms | Allocations: 2363)
+
+
+Started GET "/recipes/6" for 127.0.0.1 at 2025-12-16 13:27:27 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mRecipe Load (5.4ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 484)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 958)
+Completed 200 OK in 29ms (Views: 6.3ms | ActiveRecord: 5.4ms | Allocations: 1719)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:27 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #981", "category"=>"Main Course", "prep_time"=>364, "cook_time"=>255, "servings"=>4, "ingredients"=>"Ingredient A: 976\nIngredient B: 347", "instructions"=>"Step 1: Mix 64\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.4ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #981', 'Ingredient A: 976\nIngredient B: 347', 'Step 1: Mix 64\nStep 2: Cook.', 364, 255, 4, 'Main Course', '2025-12-16 13:27:27.568775', '2025-12-16 13:27:27.568775')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/7
+Completed 302 Found in 29ms (ActiveRecord: 9.3ms | Allocations: 2384)
+
+
+Started GET "/recipes/7" for 127.0.0.1 at 2025-12-16 13:27:27 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 23.8ms | Allocations: 494)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 952)
+Completed 200 OK in 36ms (Views: 27.9ms | ActiveRecord: 2.0ms | Allocations: 1713)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:27 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 843", "category"=>"Main Course", "prep_time"=>622, "cook_time"=>697, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.3ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 843', 'Ingredient A\nIngredient B', 'Mix and cook.', 622, 697, 4, 'Main Course', '2025-12-16 13:27:27.817831', '2025-12-16 13:27:27.817831')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/8
+Completed 302 Found in 36ms (ActiveRecord: 12.8ms | Allocations: 2384)
+
+
+Started GET "/recipes/8" for 127.0.0.1 at 2025-12-16 13:27:27 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mRecipe Load (2.4ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 484)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 948)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 2.4ms | Allocations: 1709)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:28 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #812", "category"=>"Main Course", "prep_time"=>658, "cook_time"=>853, "servings"=>4, "ingredients"=>"Ingredient A: 560\nIngredient B: 633", "instructions"=>"Step 1: Mix 912\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (6.0ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #812', 'Ingredient A: 560\nIngredient B: 633', 'Step 1: Mix 912\nStep 2: Cook.', 658, 853, 4, 'Main Course', '2025-12-16 13:27:28.107368', '2025-12-16 13:27:28.107368')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/9
+Completed 302 Found in 35ms (ActiveRecord: 17.5ms | Allocations: 2381)
+
+
+Started GET "/recipes/9" for 127.0.0.1 at 2025-12-16 13:27:28 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 494)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 943)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 1.2ms | Allocations: 1704)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:28 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 864", "category"=>"Main Course", "prep_time"=>717, "cook_time"=>818, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (12.5ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 864', 'Ingredient A\nIngredient B', 'Mix and cook.', 717, 818, 4, 'Main Course', '2025-12-16 13:27:28.391623', '2025-12-16 13:27:28.391623')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/10
+Completed 302 Found in 33ms (ActiveRecord: 23.0ms | Allocations: 2375)
+
+
+Started GET "/recipes/10" for 127.0.0.1 at 2025-12-16 13:27:28 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 955)
+Completed 200 OK in 25ms (Views: 11.7ms | ActiveRecord: 1.6ms | Allocations: 1716)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:28 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #604", "category"=>"Main Course", "prep_time"=>931, "cook_time"=>404, "servings"=>4, "ingredients"=>"Ingredient A: 182\nIngredient B: 69", "instructions"=>"Step 1: Mix 762\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #604', 'Ingredient A: 182\nIngredient B: 69', 'Step 1: Mix 762\nStep 2: Cook.', 931, 404, 4, 'Main Course', '2025-12-16 13:27:28.684702', '2025-12-16 13:27:28.684702')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/11
+Completed 302 Found in 28ms (ActiveRecord: 7.0ms | Allocations: 2378)
+
+
+Started GET "/recipes/11" for 127.0.0.1 at 2025-12-16 13:27:28 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 11 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 5.5ms | Allocations: 495)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 954)
+Completed 200 OK in 16ms (Views: 7.8ms | ActiveRecord: 1.2ms | Allocations: 1716)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:28 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 688", "category"=>"Main Course", "prep_time"=>736, "cook_time"=>760, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (2.8ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 688', 'Ingredient A\nIngredient B', 'Mix and cook.', 736, 760, 4, 'Main Course', '2025-12-16 13:27:28.976568', '2025-12-16 13:27:28.976568')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/12
+Completed 302 Found in 32ms (ActiveRecord: 7.5ms | Allocations: 2378)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2025-12-16 13:27:29 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 12 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 946)
+Completed 200 OK in 31ms (Views: 25.7ms | ActiveRecord: 1.5ms | Allocations: 1707)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:29 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #289", "category"=>"Main Course", "prep_time"=>367, "cook_time"=>106, "servings"=>4, "ingredients"=>"Ingredient A: 264\nIngredient B: 284", "instructions"=>"Step 1: Mix 790\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.8ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #289', 'Ingredient A: 264\nIngredient B: 284', 'Step 1: Mix 790\nStep 2: Cook.', 367, 106, 4, 'Main Course', '2025-12-16 13:27:29.256923', '2025-12-16 13:27:29.256923')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/13
+Completed 302 Found in 37ms (ActiveRecord: 6.8ms | Allocations: 2363)
+
+
+Started GET "/recipes/13" for 127.0.0.1 at 2025-12-16 13:27:29 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mRecipe Load (1.9ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 495)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 962)
+Completed 200 OK in 31ms (Views: 16.1ms | ActiveRecord: 1.9ms | Allocations: 1723)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:29 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 716", "category"=>"Main Course", "prep_time"=>220, "cook_time"=>607, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.9ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 716', 'Ingredient A\nIngredient B', 'Mix and cook.', 220, 607, 4, 'Main Course', '2025-12-16 13:27:29.574714', '2025-12-16 13:27:29.574714')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/14
+Completed 302 Found in 24ms (ActiveRecord: 6.2ms | Allocations: 2381)
+
+
+Started GET "/recipes/14" for 127.0.0.1 at 2025-12-16 13:27:29 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 949)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 1.5ms | Allocations: 1710)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:29 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #494", "category"=>"Main Course", "prep_time"=>351, "cook_time"=>845, "servings"=>4, "ingredients"=>"Ingredient A: 73\nIngredient B: 171", "instructions"=>"Step 1: Mix 697\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #494', 'Ingredient A: 73\nIngredient B: 171', 'Step 1: Mix 697\nStep 2: Cook.', 351, 845, 4, 'Main Course', '2025-12-16 13:27:29.818769', '2025-12-16 13:27:29.818769')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/15
+Completed 302 Found in 15ms (ActiveRecord: 6.8ms | Allocations: 2369)
+
+
+Started GET "/recipes/15" for 127.0.0.1 at 2025-12-16 13:27:29 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mRecipe Load (6.8ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 15 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 495)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 950)
+Completed 200 OK in 32ms (Views: 21.0ms | ActiveRecord: 6.8ms | Allocations: 1711)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 60", "category"=>"Main Course", "prep_time"=>164, "cook_time"=>33, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (2.7ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 60', 'Ingredient A\nIngredient B', 'Mix and cook.', 164, 33, 4, 'Main Course', '2025-12-16 13:27:30.110063', '2025-12-16 13:27:30.110063')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/16
+Completed 302 Found in 33ms (ActiveRecord: 6.8ms | Allocations: 2369)
+
+
+Started GET "/recipes/16" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 16 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 940)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 1.3ms | Allocations: 1701)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #490", "category"=>"Main Course", "prep_time"=>572, "cook_time"=>952, "servings"=>4, "ingredients"=>"Ingredient A: 872\nIngredient B: 731", "instructions"=>"Step 1: Mix 262\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (2.3ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #490', 'Ingredient A: 872\nIngredient B: 731', 'Step 1: Mix 262\nStep 2: Cook.', 572, 952, 4, 'Main Course', '2025-12-16 13:27:30.397398', '2025-12-16 13:27:30.397398')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/17
+Completed 302 Found in 35ms (ActiveRecord: 7.3ms | Allocations: 2387)
+
+
+Started GET "/recipes/17" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mRecipe Load (7.1ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 17 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 496)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 958)
+Completed 200 OK in 31ms (Views: 3.5ms | ActiveRecord: 7.1ms | Allocations: 1719)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 530", "category"=>"Main Course", "prep_time"=>241, "cook_time"=>444, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (5.5ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 530', 'Ingredient A\nIngredient B', 'Mix and cook.', 241, 444, 4, 'Main Course', '2025-12-16 13:27:30.656947', '2025-12-16 13:27:30.656947')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/18
+Completed 302 Found in 35ms (ActiveRecord: 10.9ms | Allocations: 2372)
+
+
+Started GET "/recipes/18" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 18 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 16.1ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 931)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 1.5ms | Allocations: 1692)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #487", "category"=>"Main Course", "prep_time"=>701, "cook_time"=>57, "servings"=>4, "ingredients"=>"Ingredient A: 963\nIngredient B: 972", "instructions"=>"Step 1: Mix 680\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.2ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #487', 'Ingredient A: 963\nIngredient B: 972', 'Step 1: Mix 680\nStep 2: Cook.', 701, 57, 4, 'Main Course', '2025-12-16 13:27:30.927019', '2025-12-16 13:27:30.927019')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/19
+Completed 302 Found in 33ms (ActiveRecord: 8.9ms | Allocations: 2378)
+
+
+Started GET "/recipes/19" for 127.0.0.1 at 2025-12-16 13:27:30 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mRecipe Load (3.1ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 19 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 495)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 962)
+Completed 200 OK in 33ms (Views: 8.9ms | ActiveRecord: 3.1ms | Allocations: 1723)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 973", "category"=>"Main Course", "prep_time"=>4, "cook_time"=>992, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.8ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 973', 'Ingredient A\nIngredient B', 'Mix and cook.', 4, 992, 4, 'Main Course', '2025-12-16 13:27:31.197671', '2025-12-16 13:27:31.197671')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/20
+Completed 302 Found in 32ms (ActiveRecord: 6.2ms | Allocations: 2372)
+
+
+Started GET "/recipes/20" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 20 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 940)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 1.1ms | Allocations: 1701)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #183", "category"=>"Main Course", "prep_time"=>472, "cook_time"=>704, "servings"=>4, "ingredients"=>"Ingredient A: 164\nIngredient B: 129", "instructions"=>"Step 1: Mix 886\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.3ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #183', 'Ingredient A: 164\nIngredient B: 129', 'Step 1: Mix 886\nStep 2: Cook.', 472, 704, 4, 'Main Course', '2025-12-16 13:27:31.468088', '2025-12-16 13:27:31.468088')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/21
+Completed 302 Found in 15ms (ActiveRecord: 5.6ms | Allocations: 2357)
+
+
+Started GET "/recipes/21" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 21 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 495)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 938)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 1.7ms | Allocations: 1699)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 163", "category"=>"Main Course", "prep_time"=>622, "cook_time"=>787, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (2.6ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 163', 'Ingredient A\nIngredient B', 'Mix and cook.', 622, 787, 4, 'Main Course', '2025-12-16 13:27:31.696858', '2025-12-16 13:27:31.696858')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/22
+Completed 302 Found in 26ms (ActiveRecord: 11.6ms | Allocations: 2378)
+
+
+Started GET "/recipes/22" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mRecipe Load (2.1ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 961)
+Completed 200 OK in 31ms (Views: 14.3ms | ActiveRecord: 2.1ms | Allocations: 1722)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Recipe Test #376", "category"=>"Main Course", "prep_time"=>700, "cook_time"=>974, "servings"=>4, "ingredients"=>"Ingredient A: 138\nIngredient B: 383", "instructions"=>"Step 1: Mix 781\nStep 2: Cook."}}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.9ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Recipe Test #376', 'Ingredient A: 138\nIngredient B: 383', 'Step 1: Mix 781\nStep 2: Cook.', 700, 974, 4, 'Main Course', '2025-12-16 13:27:31.957674', '2025-12-16 13:27:31.957674')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/23
+Completed 302 Found in 35ms (ActiveRecord: 14.5ms | Allocations: 2369)
+
+
+Started GET "/recipes/23" for 127.0.0.1 at 2025-12-16 13:27:31 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"23"}
+  [1m[36mRecipe Load (3.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 23 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 496)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 955)
+Completed 200 OK in 30ms (Views: 14.5ms | ActiveRecord: 3.0ms | Allocations: 1716)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2025-12-16 13:27:32 +0000
+Processing by RecipesController#create as */*
+  Parameters: {"recipe"=>{"name"=>"Test Recipe 968", "category"=>"Main Course", "prep_time"=>22, "cook_time"=>410, "servings"=>4, "ingredients"=>"Ingredient A\nIngredient B", "instructions"=>"Mix and cook."}}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mRecipe Create (1.7ms)[0m  [1m[32mINSERT INTO `recipes` (`name`, `ingredients`, `instructions`, `prep_time`, `cook_time`, `servings`, `category`, `created_at`, `updated_at`) VALUES ('Test Recipe 968', 'Ingredient A\nIngredient B', 'Mix and cook.', 22, 410, 4, 'Main Course', '2025-12-16 13:27:32.238035', '2025-12-16 13:27:32.238035')[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:22:in `create'
+Redirected to http://localhost:3000/recipes/24
+Completed 302 Found in 15ms (ActiveRecord: 7.5ms | Allocations: 2375)
+
+
+Started GET "/recipes/24" for 127.0.0.1 at 2025-12-16 13:27:32 +0000
+Processing by RecipesController#show as */*
+  Parameters: {"id"=>"24"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 24 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 952)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 1.3ms | Allocations: 1713)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 13:27:49 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (2.8ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 5876)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 6308)
+Completed 200 OK in 51ms (Views: 40.3ms | ActiveRecord: 5.4ms | Allocations: 6567)
+
+
+Started GET "/recipes/22" for 127.0.0.1 at 2025-12-16 13:29:37 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mRecipe Load (2.0ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 912)
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 2.0ms | Allocations: 1678)
+
+
+Started GET "/recipes/22" for 127.0.0.1 at 2025-12-16 13:29:38 +0000
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mRecipe Load (1.5ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 914)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 1.5ms | Allocations: 1669)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-12-16 13:29:39 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/recipes/22" for 127.0.0.1 at 2025-12-16 13:38:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mRecipe Load (1.8ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 17.5ms | Allocations: 2207)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 2812)
+Completed 200 OK in 95ms (Views: 25.1ms | ActiveRecord: 26.0ms | Allocations: 17646)
+
+
+Started DELETE "/recipes/22" for 127.0.0.1 at 2025-12-16 13:38:06 +0000
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"22"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` WHERE `recipes`.`id` = 22 LIMIT 1[0m
+  ↳ app/controllers/recipes_controller.rb:44:in `set_recipe'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:38:in `destroy'
+  [1m[36mRecipe Destroy (5.8ms)[0m  [1m[31mDELETE FROM `recipes` WHERE `recipes`.`id` = 22[0m
+  ↳ app/controllers/recipes_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 24ms (ActiveRecord: 12.6ms | Allocations: 2820)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2025-12-16 13:38:06 +0000
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM `recipes` LIMIT 1[0m
+  ↳ app/views/recipes/index.html.erb:7
+  [1m[36mRecipe Load (3.8ms)[0m  [1m[34mSELECT `recipes`.* FROM `recipes` ORDER BY `recipes`.`created_at` DESC[0m
+  ↳ app/views/recipes/index.html.erb:8
+  Rendered recipes/index.html.erb within layouts/application (Duration: 26.4ms | Allocations: 10349)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 10644)
+Completed 200 OK in 37ms (Views: 21.5ms | ActiveRecord: 6.9ms | Allocations: 10994)
+
+
